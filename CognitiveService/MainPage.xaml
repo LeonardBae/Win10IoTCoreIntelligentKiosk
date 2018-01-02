@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="CognitiveService.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CognitiveService"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" SizeChanged="OnPageSizeChanged">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+
+        <Grid  x:Name="webCamHostGrid" Visibility="Collapsed" >
+            <local:ImageWithFaceBorderUserControl BalloonBackground="#ECCF11" BalloonForeground="#D86C2A" FlowDirection="RightToLeft" x:Name="imageFromCameraWithFaces" DetectFacesOnLoad="True" DetectFaceAttributes="True" ShowMultipleFaces="True" PerformRecognition="True" ShowRecognitionResults="True"/>
+            <local:CameraControl x:Name="cameraControl"/>
+            
+        </Grid>
+        <Button x:Name="MainButton" VerticalAlignment="Top" HorizontalAlignment="Center" Height="85" Width="85"  Content="Camera" Click="mainbuttonclick">
+
+        </Button>
+        <Button x:Name="Quit" Content="X" HorizontalAlignment="Right"  VerticalAlignment="Top" FontSize="40" Height="70" Width="70" FontWeight="Bold"  Click="Quit_Click" ></Button>
+        <local:ImageWithFaceBorderUserControl BalloonBackground="#ECCF11" BalloonForeground="#D86C2A" Grid.Row="1" Grid.Column="1" x:Name="imageWithFacesControl" DetectFacesOnLoad="True" DetectFaceAttributes="True" ShowMultipleFaces="True" PerformRecognition="True" ShowRecognitionResults="True" />
+    </Grid>
+</Page>
